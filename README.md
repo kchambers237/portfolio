@@ -1,4 +1,4 @@
-# Quant Risk Manager • Physics & Computer Science
+# Quant Risk Manager • Physicist & Computer Sciencist
 
 
 ### Education
@@ -7,7 +7,7 @@
 
 ### Work Experience
 Risk Manager-Quant Analyst Methods and Models @ TRIANEL (Apr 2025 - Oct 2025), Germany
-* Develop and refine risk modelsm valuation frameworks, and quantitative KPIs.
+* Develop and refine risk models, valuation frameworks, and quantitative KPIs.
 * Omn and maintain core risk tools to ensure reliable, production-grade performance.
 * Run complex statistical and quantitative analyses to support high-stakes decisions.
 * Optimize valuation workflows and build effizient, scalable data pipelines.
