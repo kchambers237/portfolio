@@ -12,7 +12,7 @@ The model exactly preserves traded weekly forward prices while producing a stabl
 * Trading desks  
 * Risk management 
 * Portfolio valuation & PnL attribution 
-   Load & generation exposure analysis
+* Load & generation exposure analysis
 
 ## Problem Statement
 Electricity forwards are typically quoted at weekly or monthly granularity, while risk and P&L are driven by hourly price dynamics.
@@ -64,6 +64,5 @@ The model produces smooth, realistic hourly profiles while maintaining strict al
 * Core stack: NumPy, pandas, SciPy
 * Design: Modular, fully reproducible pipeline
 * Focus: Transparency over black-box optimization
-
 
 Focus: Transparency over black-box optimization
