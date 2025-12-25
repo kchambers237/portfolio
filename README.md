@@ -1,53 +1,69 @@
-# Quant Risk Manager • Physicist & Computer Sciencist
+# Hourly Price Forward Curve (HPFC)
+## Market-consistent two-stage modelling for power risk and valuation
 
+![hpfc](path/to/image.png)
+[Full technical documentation (PDF)](path/to/document.pdf)
 
-## Education
-* B.Sc Physics & Computer Science     University of Buea(Cameroon)
-* Fundamental of Mech. Eng.(Rail Vehicle Engineering)  FH Aachen(Germany)
+## Executive Summary
+This project develops a market-consistent Hourly Price Forward Curve (HPFC) for electricity markets, designed for risk measurement, valuation, and scenario analysis.
+The model exactly preserves traded weekly forward prices while producing a stable, interpretable, and auditable hourly structure.
 
-## Work Experience
-### Risk Manager-Quant Analyst Methods and Models @ TRIANEL (Apr 2025 - Oct 2025), Germany
-* Develop and refine risk models, valuation frameworks, and quantitative KPIs.
-* Omn and maintain core risk tools to ensure reliable, production-grade performance.
-* Run complex statistical and quantitative analyses to support high-stakes decisions.
-* Optimize valuation workflows and build effizient, scalable data pipelines.
+## Target use cases:
+* Trading desks  
+* Risk management 
+* Portfolio valuation & PnL attribution 
+   Load & generation exposure analysis
 
-### IT-Specialist @ Aachen Institute of Applied Sciences (Dec 2024 - Apr 2025), Germany
-* Ensured system stability, data integrity, and efficient operation of core IT systems.
-* Performed technical analyses, diagnostics, maintenance, and supported the integration of solutions.
-* Collaborated with cross-functional teams to implement IT-driven solutions and optimize business processes.
+## Problem Statement
+Electricity forwards are typically quoted at weekly or monthly granularity, while risk and P&L are driven by hourly price dynamics.
+Naïve disaggregation introduces:
+* Arbitrage violations
+* Instability
+* Loss of market consistency
 
-### Academic Tutor @ Aachen Institute of Applied Sciences (Apr 2023 - present), Germany
-* Guide and support students in exercises, seminars, and tutorials to deepen understanding of course content.
-* Deliver subject-matter explanations, answered technical questions, and assisted with assignments and project work.
-* Create and structure learning materials, summaries, and solution guides.
-* Assist in organizing courses, seminars, and eximinations.
-* Encourage independent learning through target group support and structtured guidance.
+## Objective:
+Construct an hourly curve that is:
+* Fully consistent with observed market prices
+* Structurally constrained
+* Suitable for downstream risk models
 
-### Software & Hardware Developer @ Aerial Photovoltaic Inspection GmbH (Aug 2021 - Jun 2022)
-* Engineered embedded software and hardware for GPS-based photoltaic measurement systems, with a strong focus on data quality and system reliability.
-* Processed and analysed large sensor datasets (mining, cleaning, visualization, modelling) to extract actionable insights and support algorithm development.
-* Developed microcontroller-based IR modules, including requirements analysis, module configuration, power designm and implementation of low-level control logic.
+ ## Methodology Overview
+A two-stage linearized framework separates shape from price level, improving robustness and interpretability.
+### Stage 1 — Intraday Shape Modelling
+* Normalize prices by weekly base levels
+* Estimate hourly peak/off-peak profiles
+* Seasonal bucketing to capture:
+- Solar generation impact
+- Weekday / weekend effects
+* Shape estimation performed under explicit linear constraints
 
-# Projects
-## Hourly Price Forward Curve  
-### A market-consistent, two-stage modelling 
-![HPFC image](assests/hpfc/images/hpfc.png)
-![HPFC modelling documentation](hpfc.pdf)
+### Stage 2 — Weekly Price Reintroduction
+* Rescale normalized shapes using observed weekly forward prices
+* Guarantees exact preservation of traded market levels
 
-### Objective:
-Develop a market-consistent hourly forward curve for electricity prices, suitable for risk assessment and valuation.
+## Key Model Properties
+* ### Market consistency:
+Weekly base prices are preserved exactly (no arbitrage)
+* ### Stability:
+Linearized estimation avoids overfitting and regime instability
+* ### Interpretability:
+Clear separation of shape drivers vs price level
+* ### Auditability:
+Deterministic, constraint-based construction suitable for risk governance
 
-### Approach:
-*	Two-stage linearized model separating intraday shape from weekly price level
-*	Stage 1: Predict peak/off-peak shapes on normalized prices
-*	Stage 2: Reintroduce weekly prices via weekly scaling 
-*	Integrate solar production effects with seasonal bucketing
-*	
-### Key Features:
-*	Exact preservation of weekly base prices
-*	Stable and interpretable estimation
-*	Explicit structural constraints
-*	Fully auditable, modular Python implementation
-Validation:
-•	HPFC vs observed price diagnostics
+## Validation & Diagnostics
+* Hourly reconstruction vs observed spot prices
+* Shape stability across seasons
+* Sensitivity to solar production regimes
+
+## Outcome:
+The model produces smooth, realistic hourly profiles while maintaining strict alignment with forward market inputs.
+
+## Implementation
+* Language: Python
+* Core stack: NumPy, pandas, SciPy
+* Design: Modular, fully reproducible pipeline
+* Focus: Transparency over black-box optimization
+Design: Modular, fully reproducible pipeline
+
+Focus: Transparency over black-box optimization
