@@ -1,8 +1,8 @@
 # Hourly Price Forward Curve (HPFC)
 ## Market-consistent two-stage modelling for power risk and valuation
 
-![hpfc](path/to/image.png)
-[Full technical documentation (PDF)](path/to/document.pdf)
+![hpfc](figures/hpfc.png)
+[Full technical documentation (PDF)](docs/hpfc_doc.pdf)
 
 ## Executive Summary
 This project develops a market-consistent Hourly Price Forward Curve (HPFC) for electricity markets, designed for risk measurement, valuation, and scenario analysis.
