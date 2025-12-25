@@ -29,6 +29,7 @@ Construct an hourly curve that is:
 
 ## Methodology Overview
 A two-stage linearized framework separates shape from price level, improving robustness and interpretability.
+
 ### Stage 1 — Intraday Shape Modelling
 * Normalize prices by weekly base levels
 * Estimate hourly peak/off-peak profiles
@@ -42,14 +43,10 @@ A two-stage linearized framework separates shape from price level, improving rob
 * Guarantees exact preservation of traded market levels
 
 ## Key Model Properties
-* ### Market consistency:
-Weekly base prices are preserved exactly (no arbitrage)
-* ### Stability:
-Linearized estimation avoids overfitting and regime instability
-* ### Interpretability:
-Clear separation of shape drivers vs price level
-* ### Auditability:
-Deterministic, constraint-based construction suitable for risk governance
+* Market consistency: Weekly base prices are preserved exactly (no arbitrage)
+* Stability: Linearized estimation avoids overfitting and regime instability
+* Interpretability: Clear separation of shape drivers vs price level
+* Auditability: Deterministic, constraint-based construction suitable for risk governance
 
 ## Validation & Diagnostics
 * Hourly reconstruction vs observed spot prices
@@ -62,7 +59,7 @@ The model produces smooth, realistic hourly profiles while maintaining strict al
 ## Implementation
 * Language: Python
 * Core stack: NumPy, pandas, SciPy
+* * Focus: Transparency over black-box optimization
 * Design: Modular, fully reproducible pipeline
-* Focus: Transparency over black-box optimization
 
 Focus: Transparency over black-box optimization
