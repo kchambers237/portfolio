@@ -59,7 +59,7 @@ The model produces smooth, realistic hourly profiles while maintaining strict al
 ## Implementation
 * Language: Python
 * Core stack: NumPy, pandas, SciPy
-* * Focus: Transparency over black-box optimization
 * Design: Modular, fully reproducible pipeline
+* Focus: Transparency over black-box optimization
 
 Focus: Transparency over black-box optimization
