@@ -1,5 +1,5 @@
 # Hourly Price Forward Curve (HPFC)
-## Market-consistent two-stage modelling for power risk and valuation
+## A Market-consistent two-stage modelling for power risk and valuation
 
 ![hpfc](figures/hpfc.png)
 [Full technical documentation (PDF)](docs/hpfc_doc.pdf)
