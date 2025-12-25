@@ -27,7 +27,7 @@ Construct an hourly curve that is:
 * Structurally constrained
 * Suitable for downstream risk models
 
- ## Methodology Overview
+## Methodology Overview
 A two-stage linearized framework separates shape from price level, improving robustness and interpretability.
 ### Stage 1 — Intraday Shape Modelling
 * Normalize prices by weekly base levels
